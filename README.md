@@ -16,61 +16,30 @@ namespace Db.Test.Repositories
         protected override decimal Create()
         {
             // arrange
-            var user = new User
-            {
-                Username = "ebrahimi"
-            };
-
             // act
-            Db.Users.Add(user);
-            Db.SaveChanges();
-
             // assert
-            Assert.IsTrue(user.Id > 0);
-
-            return user.Id;
+            
+            // return id;
         }
 
         protected override void Read(decimal id)
         {
             // act
-            // Use Include("...") to include dependencies
-            var user = Db.Users.FirstOrDefault(c => c.Id == id); 
-
             // assert
-            Assert.IsNotNull(user);
         }
 
         protected override void Update(decimal id)
         {
             // arrange
-            const bool username = "updated ebrahimi";
-            var user = Db.Users.First(c => c.Id == id);
-
             // act
-            user.Username = username;
-            Db.SaveChanges();
-
-            var updatedUser = Db.Users.First(c => c.Id == user.Id);
-
             // assert
-            Assert.AreEqual(username, updatedUser.Username);
         }
 
-        // Remove all created entities
         protected override void Delete(decimal id)
         {
             // arrange
-            var user = Db.Users.First(c => c.Id == id);
-
             // act
-            Db.Users.Remove(user);
-            Db.SaveChanges();
-
-            var removedUser = Db.Users.FirstOrDefault(c => c.Id == user.Id);
-
             // assert
-            Assert.IsNull(removedUser);
         }
     }
 }
