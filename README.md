@@ -1,4 +1,4 @@
-# EntityFramework.Oracle.Test
+# EntityFramework.Oracle.Test [![NuGet version](https://badge.fury.io/nu/Database.EntityFramework.Oracle.Test.svg)](https://badge.fury.io/nu/Database.EntityFramework.Oracle.Test)
 This library exposes a base class to simplify unit testing on EntityFramework models.
 ## Installation
 `PM> Install-Package Database.EntityFramework.Oracle.Test -Version x.x.x`
